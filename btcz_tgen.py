@@ -1,3 +1,4 @@
+import os
 import secrets
 import hashlib
 import ecdsa
@@ -5,6 +6,7 @@ from datetime import datetime
 
 NUM_ADDRESSES = 10
 BASE58_ALPHABET = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
+os.system("title btcz_tgen")
 
 def base58_encode(data_bytes: bytes) -> str:
     number = int.from_bytes(data_bytes, 'big')
