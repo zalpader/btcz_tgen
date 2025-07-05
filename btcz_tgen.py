@@ -4,7 +4,7 @@ import hashlib
 import ecdsa
 from datetime import datetime
 
-NUM_ADDRESSES = 10
+NUM_ADDRESSES = 25
 BASE58_ALPHABET = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
 os.system("title btcz_tgen")
 
@@ -35,7 +35,7 @@ def generate_btcz_keypair() -> tuple[str, str]:
 
     return address, wif_key
 
-filename = f'btcz_{datetime.now():%Y-%m-%d_%H-%M-%S}.txt'
+filename = f'btcz_{datetime.now():%Y%m%d_%H.%M.%S}.txt'
 with open(filename, 'w') as file:
     for _ in range(NUM_ADDRESSES):
         btcz_address, wif_private_key = generate_btcz_keypair()
